@@ -17,4 +17,11 @@ public class StringCalculatorTest {
         int expected = 0;
         Assertions.assertEquals(expected, stringCalculator.add(input));
     }
+//    "1" -> 1
+    @Test
+    void addReturnResultForLengthOneInput() {
+        String input = "1";
+        int expected = 1;
+        Assertions.assertEquals(expected, stringCalculator.add(input));
+    }
 }
