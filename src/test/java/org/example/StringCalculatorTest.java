@@ -24,4 +24,11 @@ public class StringCalculatorTest {
         int expected = 1;
         Assertions.assertEquals(expected, stringCalculator.add(input));
     }
+//    "3\n4" -> 7
+    @Test
+    void addReturnResultForInputThatSeperatLine() {
+        String input = "3\n4";
+        int expected = 7;
+        Assertions.assertEquals(expected, stringCalculator.add(input));
+    }
 }
