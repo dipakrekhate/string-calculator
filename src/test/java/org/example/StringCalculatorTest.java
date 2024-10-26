@@ -31,4 +31,11 @@ public class StringCalculatorTest {
         int expected = 7;
         Assertions.assertEquals(expected, stringCalculator.add(input));
     }
+//    "//;\n1;2" -> 3
+    @Test
+    void addReturnResultForInputHaveDelimiter() {
+        String input = "//;\n1;2";
+        int expected = 3;
+        Assertions.assertEquals(expected, stringCalculator.add(input));
+    }
 }
