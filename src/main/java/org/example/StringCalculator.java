@@ -7,8 +7,12 @@ public class StringCalculator {
             return 0;
         } else if (input.length() == 1) {
             return Integer.parseInt(input);
-        } else {
-            throw new IllegalArgumentException("input not valid");
         }
+        String[] inputArr = input.split("\n");
+        int sum = 0;
+        for (String str: inputArr) {
+            sum += Integer.parseInt(str);
+        }
+        return sum;
     }
 }
