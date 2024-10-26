@@ -8,11 +8,23 @@ public class StringCalculator {
         } else if (input.length() == 1) {
             return Integer.parseInt(input);
         }
-        String[] inputArr = input.split("\n");
-        int sum = 0;
-        for (String str: inputArr) {
-            sum += Integer.parseInt(str);
+        String delimeter = null;
+        if (input.matches("//(.*)\n(.*)")) {
+            delimeter = Character.toString(input.charAt(2));
+            input = input.substring(4);
         }
-        return sum;
+        String arr[] = input.split(delimeter + "|\n");
+        return sum(arr);
+    }
+    private int sum(String[] arr) {
+        int total = 0;
+        for (String num : arr) {
+            int value = Integer.parseInt(num);
+            if (value < 0) {
+                throw new IllegalArgumentException("Negative numbers not allowed: " + value);
+            }
+            total += value;
+        }
+        return total;
     }
 }
